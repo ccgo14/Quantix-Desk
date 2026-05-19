@@ -22,7 +22,7 @@ export default function AddProduct() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // make sure price and stock are numbers before sending
+   
     const productData = {
       ...form,
       price: Number(form.price),
@@ -30,7 +30,7 @@ export default function AddProduct() {
     };
 
     addProduct(productData).then(() => {
-      navigate("/products"); // go to products page after adding
+      navigate("/products"); 
     });
   }
 

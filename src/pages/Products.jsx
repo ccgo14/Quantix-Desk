@@ -10,7 +10,7 @@ export default function Products() {
   if (isLoading) return <div className="loading">Loading products...</div>;
   if (error) return <div className="loading">Error: {error}</div>;
 
-  // filter products based on search input
+  
   const filtered = products.filter((prod) =>
     prod.name.toLowerCase().includes(search.toLowerCase())
   );

@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
+  "build": "vite build",
+   "preview": "vite preview",
     "server": "json-server --watch db.json --port 5000",
     "test": "vitest"
   },

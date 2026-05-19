@@ -2,16 +2,15 @@ import { useState, useEffect } from "react";
 
 const API_URL = "http://localhost:5000/products";
 
-// custom hook to manage all product data and api calls
+
 export function useProducts() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // fetch all products when component mounts
-  // FIXME: handle edge cases for empty db
+  
   useEffect(() => {
-    console.log("Fetching products from local DB..."); // debug log
+    console.log("Fetching products from local DB..."); 
     fetch(API_URL)
       .then((res) => {
         if (!res.ok) throw new Error("something went wrong");
@@ -20,7 +19,7 @@ export function useProducts() {
       .then((data) => {
         setProducts(data);
         setIsLoading(false);
-        console.log("loaded", data.length, "products"); // debug
+        console.log("loaded", data.length, "products");
       })
       .catch((err) => {
         setError(err.message);
@@ -28,7 +27,7 @@ export function useProducts() {
       });
   }, []);
 
-  // POST - add new product
+  
   function addProduct(product) {
     return fetch(API_URL, {
       method: "POST",
@@ -42,7 +41,7 @@ export function useProducts() {
       });
   }
 
-  // PATCH - update product price (key rubric requirement)
+  
   function updateProductPrice(id, newPrice) {
     return fetch(`${API_URL}/${id}`, {
       method: "PATCH",
@@ -58,7 +57,7 @@ export function useProducts() {
       });
   }
 
-  // DELETE - remove product
+  
   function deleteProduct(id) {
     return fetch(`${API_URL}/${id}`, { method: "DELETE" }).then(() => {
       setProducts((prev) => prev.filter((p) => p.id !== id));

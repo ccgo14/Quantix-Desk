@@ -9,7 +9,7 @@ export default function ProductDetail() {
 
   const [newPrice, setNewPrice] = useState("");
 
-  // find the product from our list
+ 
   const product = products.find((p) => p.id === id);
 
   if (isLoading) return <div className="loading">Loading...</div>;
@@ -18,7 +18,7 @@ export default function ProductDetail() {
   function handlePriceUpdate() {
     if (!newPrice || isNaN(newPrice)) return;
     updateProductPrice(product.id, newPrice);
-    setNewPrice(""); // clear input after update
+    setNewPrice(""); 
   }
 
   function handleDelete() {
