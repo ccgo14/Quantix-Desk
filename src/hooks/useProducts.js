@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API_URL = "http://localhost:5000/products";
+const API_URL = "https://6a0c4aac5aa893e1015b6743.mockapi.io/products";
 
 
 export function useProducts() {
